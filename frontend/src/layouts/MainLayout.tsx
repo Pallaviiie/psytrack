@@ -1,0 +1,24 @@
+import { Outlet } from "react-router-dom";
+
+import Sidebar from "@/components/layout/Sidebar";
+import Navbar from "@/components/layout/Navbar";
+
+export default function MainLayout() {
+  return (
+    <div className="flex h-screen bg-slate-50 dark:bg-slate-950">
+      {/* Sidebar */}
+      <Sidebar />
+
+      {/* Main Content */}
+      <div className="flex flex-1 flex-col overflow-hidden">
+        {/* Navbar */}
+        <Navbar />
+
+        {/* Page Content */}
+        <main className="flex-1 overflow-y-auto p-6">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
+}
